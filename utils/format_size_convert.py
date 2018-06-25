@@ -9,8 +9,10 @@ import os
 import cv2
 
 
-path='/home/tom/workspace/study/tfClassifier/image_classification/dataset1/OK/'
-path1='/home/tom/workspace/study/tfClassifier/image_classification/dataset1/jpg/'
+path='/home/test/Public/dataset/20180417/process_data/images/'
+
+path_1='/home/test/Public/dataset/20180417/process_data/images_1/'
+
 
 files = os.listdir(path)
 i = 1
@@ -20,6 +22,9 @@ for file in files:
     if img is not None:
         img1=cv2.cvtColor(img,cv2.COLOR_GRAY2RGB)
         img2=cv2.resize(img1,(1000,750))        
-        cv2.imwrite(path1+file.split(".")[0]+'.jpg',img2)
+        cv2.imwrite(path_1+file.split(".")[0]+'.jpg',img2)
         #cv2.imwrite(path+'yushi_'+str(i)+'.jpg',img)
         i=i+1
+        
+        
+        

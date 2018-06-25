@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Apr  2 15:33:09 2018
+
+@author: test
+"""
+
+import numpy as np
+import PIL.Image
+
+label_png='/home/test/workspace/ICNet-tensorflow/dataset/dataset2/mask/00102.png'
+lbl=np.asarray(PIL.Image.open(label_png))
+
+print(lbl.dtype)
+print(np.unique(lbl))
+
+print(lbl.shape)

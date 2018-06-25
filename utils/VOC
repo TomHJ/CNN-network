@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Apr 16 14:57:50 2018
+
+@author: test
+"""
+
+import os
+
+files=os.listdir("/home/test/object_detection/darknet/train_180418/dataset/test_img")
+
+X=[]
+for file in files:
+    new_file=file.split('.')[0]
+    X.append(new_file)
+    
+X.sort()    
