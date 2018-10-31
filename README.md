@@ -1,2 +1,5 @@
-# CNN-network
-try to build CNN network with Python
+# marked web
+http://mirai-tec.hatenablog.com/
+
+
+
