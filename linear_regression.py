@@ -8,16 +8,18 @@ linear regression exercise for y=3*x +1
 import tensorflow as tf
 import numpy as np
 
-x=np.linspace(1.0,101.0,100,endpoint=False)
-x=x/100
+max_val=100
 
-y=3*x+1+0.0033*np.random.randn(100)
+x=np.linspace(1.0,1.0+max_val,max_val,endpoint=False)
+x=x/max_val
+
+y=3*x+1+0.0033*np.random.randn(max_val)
 
 # print("x shape is {}".format(x.shape))
 # print("y shape is {}".format(y.shape))
 
 batchsize=5
-iteration=100//batchsize
+iteration=max_val//batchsize
 
 X=tf.placeholder(tf.float32,shape=[None])
 Y=tf.placeholder(tf.float32,shape=[None])
