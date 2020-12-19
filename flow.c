@@ -33,6 +33,12 @@ char* fgetl(FILE* fp){
 }
 
 int main(int argc,char** argv){
+	
+	char str[]="abc\0def\0ghi\0";
+	printf("str is %s\n",str);
+	printf("str size is %zu\n",sizeof(str)); 
+	printf("str last character is %d\n",str[sizeof(str)-1]);	
+
 	// step 1: parse command line
 	if((argc<2) || (argc<3)) {
 		fprintf(stderr,"usage:%s <function>\n",argv[0]);
@@ -51,10 +57,11 @@ int main(int argc,char** argv){
 	}
 
 	char* line;
-	//line=fgetl(fp);
-	while(line=fgetl(fp)){
+	line=fgetl(fp);
+	
+	/*while(line=fgetl(fp)){
 		//printf("%s\n",line);
-	}	
+	}*/	
 
 	fclose(fp);
 	
