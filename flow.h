@@ -3,14 +3,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int main(){
-for(int i=0;i<10;i++)
-printf("i:%d\n",i);
 
-for(int j=0;j<10;++j)
-printf("j:%d\n",j);
+typedef struct kvp{
+	char *key;
+	char *val;
+	int used;
+}kvp;
 
-return 0;
-}
+
+typedef struct node{
+	void *val;
+	struct node *next;
+	struct node *prev;
+}node;
+
+typedef struct list{
+	int size;
+	node *front;
+	node *back;
+}list;
 
 #endif
