@@ -4,12 +4,16 @@
 #include <stdlib.h>
 #include <string.h>
 
+typedef struct section{
+	char *type;
+	list *options;
+}section;
+
 typedef struct kvp{
 	char *key;
 	char *val;
 	int used;
 }kvp;
-
 
 typedef struct node{
 	void *val;
