@@ -2,39 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-void strip(char *line){
-	
-}
-
-char* find_arg(int argc,char** argv,char* option,char* value){
-	char* str;
-	for(int i=0;i<argc-1;i++){
-		if(0==strcmp(argv[i],option)){
-			str= argv[i+1];
-			return str;
-		}
-	}
-	return value;
-}
-
-
-char* fgetl(FILE* fp){
-	if(feof(fp)) return 0;
-	size_t size=512;
-	char* line=malloc(size*sizeof(char));
-	//printf("before: %p\n",fp);
-	if(!fgets(line,size,fp)){
-		free(line);
-		return 0;
-	}
-    //printf("after: %p\n",fp);
-	//printf("fgetl:%s\n",line);
-    size_t curr=strlen(line);
-	//printf("the line lenght is %zu\n",curr);
-	printf("%s",line);
-
-	return line;
-}
+#include "flow.h"
+#include "utils.h"
 
 int main(int argc,char** argv){
 	// step 1: parse command line
@@ -54,11 +23,15 @@ int main(int argc,char** argv){
 		return 0;
 	}
 
+	list *options=make_list();
+	section *current;
 	char* line;
 	line=fgetl(fp);
 	strip(line);
 	switch(line[0]){
 		case '[':
+			current=(section*)malloc(sizeof(section));
+			list_insert(options,current);
 			
 	}	
 	/*while(line=fgetl(fp)){
