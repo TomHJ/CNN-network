@@ -1,13 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
+#include "utils.h"
 
 list *make_list(){
     list *tmp;
     tmp=(list*)malloc(sizeof(list));
     tmp->size=0;
-    tmp->fornt=0;
+    tmp->front=0;
     tmp->back=0;
 
     return tmp;
@@ -47,7 +44,9 @@ char* fgetl(FILE* fp){
     return line;
 }
 
-
+void list_insert(list *options,section *current){
+	
+}
 
 
 
